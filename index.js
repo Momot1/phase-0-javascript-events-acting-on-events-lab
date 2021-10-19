@@ -1,28 +1,31 @@
 // Your code here
-const dodger = document.getElementById("dodger");
+const dodger = document.getElementById('dodger')
 
 function moveDodgerLeft(){
-    const leftNumbers = dodger.style.left.replace("px", "");
-    const left = parseInt(leftNumbers);
+    const leftNum = dodger.style.left.replace("px", "")
+    const left = parseInt(leftNum, 10)
 
     if(left > 0){
-        dodger.style.left = `${left - 1}px`;
+        dodger.style.left = `${left - 1}px`
     }
 }
+    
+
+
 
 function moveDodgerRight(){
-    const rightNumbers = dodger.style.left.replace("px", "");
-    const right = parseInt(rightNumbers);
+    const leftNum = dodger.style.left.replace("px", "")
+    const left = parseInt(leftNum, 10)
 
-    if(right < 360){
-        dodger.style.left = `${right + 1}px`;
+    if(left < 360){
+        dodger.style.left = `${left + 1}px`
     }
 }
 
-document.addEventListener("keydown", function (e) {
+dodger.addEventListener('keydown', e => {
     if(e.key === "ArrowLeft"){
-        moveDodgerLeft();
-    }else if(e.key === "ArrowRight"){
-        moveDodgerRight();
+        moveDodgerLeft()
+    } else if (e.key === ArrowRight){
+        moveDodgerRight()
     }
-});
+})
